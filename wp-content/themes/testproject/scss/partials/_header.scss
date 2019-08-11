@@ -1,0 +1,48 @@
+@import "partials/variable.scss";
+@import "partials/mixins.scss";
+
+html, body, input{
+	font-family: $fontFamily;
+	font-size: 12px;
+	color: $themeColor;
+	line-height: 1.5;
+}
+
+h1,h2,h3,h4,h5,h6{ 
+	font-family: $fontFamilyHeading;
+	color: $themeColor;
+	font-weight: bold;
+}
+p{
+	margin: 0 0 20px;
+}
+a{
+	color: $themeColor;
+	&:hover{
+		text-decoration: none;
+	}
+}
+img{
+	max-width: 100%;
+	height: auto;
+}
+input, button, select, optgroup, textarea {
+	outline: none;
+}
+.container{
+	max-width: 980px;
+	margin: 0 auto;
+}
+.btn{
+	background: $lightgreyColor;
+	padding: 8px 12px;
+	line-height: 1;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 14px;
+	font-weight: 600;
+	font-family: $fontFamilyHeading;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}

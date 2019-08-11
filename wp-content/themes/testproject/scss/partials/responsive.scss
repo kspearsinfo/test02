@@ -1,0 +1,25 @@
+@media screen and (max-width: 1000px) { 
+	.container{
+		max-width: 750px;
+	}
+	.article-wrap{
+		.article{
+			.article-info{
+				padding-right: 0;
+			}
+		}
+	}
+}
+@media screen and (max-width: 767px) {
+	.article-wrap{
+		display: block;
+		padding: 0 10px;
+		padding-top: 20px;
+		.article{
+			width: 100%;
+			.article-photo{
+				max-height: 50px;
+			}
+		}
+	}	
+}
