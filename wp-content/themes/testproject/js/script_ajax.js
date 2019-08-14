@@ -38,4 +38,70 @@ jQuery(document).ready(function($) {
             });
         }
     });
+
+
+$(document).on("click", '.add_like', function(event) {
+
+
+        var ajaxurl = $('#loadMore').data('url');
+        var id = $(this).data('id');
+        var liked = $(this).data('liked');
+        var user_id = $(this).data('user_id');
+
+        var outer_this = $(this);
+
+    /*
+    * Collecting data for ajax call.
+    */
+    var data = { action : 'post_like',
+                id : id,
+                liked: liked,
+                user_id: user_id
+    }  
+
+
+    if(liked == 'true'){
+                       $(this).removeClass('liked');
+                       $(this).data('liked', 'false');  
+                    }else{
+                        $(this).addClass('liked');
+                       $(this).data('liked', 'true'); 
+     }
+
+        /*
+    * Making ajax request to save values.
+    */  
+    jQuery.ajax({
+        url : ajaxurl,
+        type : 'post',
+        data : data,
+        success : function( response ) {
+
+               
+                if(response.success){
+
+                    // console.log(response); return;
+
+                    
+
+                     $(outer_this).next().html(' ').html(response.data);
+
+                     
+                    
+                }
+                else{
+                    console.log(response.data);
+
+                    }
+        }
+
+        });/* Ajax func ends here. */ 
+
+    });
 });
+
+function changeColor()
+{
+   var icon = document.getElementById('heart');
+   icon.style.color = "red";    
+}
