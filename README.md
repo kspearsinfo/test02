@@ -15,3 +15,22 @@ This will include only loadmore with the help of testproject Custom Post Type
 
 - There is a setting page in settings menu from the left side where you can specify the number of posts which will load on load more. 
 
+- To check the functionality of favourite, Please login to the admin panel with admin/admin as username/password.
+
+- It will then show you heart to mark the post favourite
+
+- Once it is clicked it is saving data to post meta table
+
+- Also it is turning into green
+
+- -------------------------------------------------------
+
+- Main File to check the code are 
+
+- Templates/test-posts.php
+
+- functions.php
+
+- Js/script_ajax.js
+
+- Plugins/testposts
