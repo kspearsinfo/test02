@@ -87,7 +87,8 @@ add_action('init','create_test_post_type');
  * load more script call back
  */
 function ajax_script_load_more($args) {
-    //init ajax
+	$offset = 2;
+    
     $ajax = false;
     //check ajax call or not
     if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) &&
@@ -104,18 +105,20 @@ function ajax_script_load_more($args) {
         'post_type' => 'testing_posts',
         'post_status' => 'publish',
         'posts_per_page' =>$num,
+        'post__not_in' => array(77,75),
         'paged'=>$paged
     );
     //query
     $query = new WP_Query($args);
     //check
     if ($query->have_posts()):
+
         //loop articales
         while ($query->have_posts()): $query->the_post();
             //include articles template
             //include 'ajax-content.php';
 		?>
-		<div class="article">
+		<div class="article <?php the_ID();?>">
 		<?php if ( has_post_thumbnail() ) { ?>
 			<div class="article-photo">
 			<img src="<?php the_post_thumbnail_url(); ?>" alt="<?php echo get_the_post_thumbnail_caption(); ?>">

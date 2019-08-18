@@ -18,7 +18,7 @@ $posts_per_page = get_option( 'testposts_option_name' );
 		 while($query->have_posts()):
 		   $query->the_post();
 		?>
-		<div class="article">
+		<div class="article <?php the_ID();?>">
 		<?php if ( has_post_thumbnail() ) { ?>
 			<div class="article-photo">
 			<img src="<?php the_post_thumbnail_url(); ?>" alt="<?php echo get_the_post_thumbnail_caption(); ?>">

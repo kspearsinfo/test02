@@ -61,10 +61,14 @@ $(document).on("click", '.add_like', function(event) {
 
 
     if(liked == 'true'){
+
+
                        $(this).removeClass('liked');
                        $(this).data('liked', 'false');  
+                       
                     }else{
                         $(this).addClass('liked');
+                        
                        $(this).data('liked', 'true'); 
      }
 
@@ -76,23 +80,17 @@ $(document).on("click", '.add_like', function(event) {
         type : 'post',
         data : data,
         success : function( response ) {
-
-               
-                if(response.success){
-
-                    // console.log(response); return;
-
-                    
-
-                     $(outer_this).next().html(' ').html(response.data);
-
-                     
-                    
+              
+                if(response.success)
+                {
+                    console.log(response); return;
+                    $(outer_this).next().html(' ').html(response.data);  
                 }
-                else{
+                else
+                {
                     console.log(response.data);
 
-                    }
+                }
         }
 
         });/* Ajax func ends here. */ 

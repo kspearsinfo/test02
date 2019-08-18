@@ -137,4 +137,5 @@ input, button, select, optgroup, textarea {
     max-height: 50px;
   }
 }
-.position {float: right;; padding-top: 10px;}
+.position {float: right;padding-top: 10px;}
+.position .liked {color:green;}
